@@ -30,7 +30,7 @@ def play_game():
 def core_game(words):
     attemps = 8
     letters_used = ""
-    while attemps > 1 and ' _ ' in word_display:
+    while attemps > 0 and ' _ ' in word_display:
         print("----------------------------------------------------------------")
         print("Letters used: " + letters_used)
         print("\n" + ' '.join(word_display) + "\n")
@@ -42,7 +42,7 @@ def core_game(words):
             for index, letter in enumerate(chosen_word):
                 if letter == guess:
                     word_display[index] = guess
-            if attemps > 1 and ' _ ' not in word_display:
+            if attemps > 0 and ' _ ' not in word_display:
                 print("----------------------------------------------------------------\n")
                 print("You WON and live another day, but not for long.")
                 print("----------------------------------------------------------------\n")
@@ -55,52 +55,67 @@ def core_game(words):
             letters_used += guess + ","
             if attemps == 7:
                 print("_______       ")
+                print(" |            ")
+                print(" |            ")
+                print(" |            ")
+                print(" |            ")
+                print("============    ")
+                print("\nNot up to a good start, Right?")
+            elif attemps == 6:
+                print("_______       ")
                 print(" |    |       ")
                 print(" |            ")
                 print(" |            ")
                 print(" |            ")
+                print("============    ")
                 print("\nThat's the wrong letter, You wanna be out here all day?")
-            elif attemps == 6:
+            elif attemps == 5:
                 print("_______       ")
                 print(" |    |       ")
                 print(" |    O       ")
                 print(" |            ")
                 print(" |            ")
+                print("============    ")
                 print("\nyou have a pretty neck!")
-            elif attemps == 5:
+            elif attemps == 4:
                 print("_______       ")
                 print(" |    |       ")
                 print(" |    O       ")
                 print(" |   /        ")
                 print(" |            ")
+                print("============    ")
                 print("\nTry Again.")
-            elif attemps == 4:
+            elif attemps == 3:
                 print("_______       ")
                 print(" |    |       ")
                 print(" |    O       ")
                 print(" |   /|       ")
                 print(" |            ")
+                print("============    ")
                 print("\nThings aren't looking so good, that guess was WRONG!")
-            elif attemps == 3:
-                print("_______       ")
-                print(" |    |       ")
-                print(" |    O       ")
-                print(" |   /|\\      ")
-                print(" |            ")
-                print("\nWrong Guess Idiot!")
             elif attemps == 2:
                 print("_______       ")
                 print(" |    |       ")
                 print(" |    O       ")
-                print(" |   /|\\      ")
+                print(" |   /|\\     ")
+                print(" |            ")
+                print("============   ")
+                print("\nWrong Guess Idiot!")
+            elif attemps == 1:
+                print("_______       ")
+                print(" |    |       ")
+                print(" |    O       ")
+                print(" |   /|\\     ")
                 print(" |   /        ")
+                print("============  ")
                 print("\nOh man, that crowd is gettin happy, I thought you wanted to make them mad?")
             else:
                 print("_______       ")
                 print(" |    |       ")
                 print(" |    O       ")
-                print(" |   /|\\      ")
-                print(" |   / \\      ")
+                print(" |   /|\\     ")
+                print(" |   / \\     ")
+                print("============  ")
                 print("\nThe noose tightens around your neck, and you feel the sudden urge to watch Boku no Pico.")
                 print("Game Over!!!")
 
